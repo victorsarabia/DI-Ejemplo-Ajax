@@ -3,14 +3,17 @@ require __DIR__."/models/Medico.php";
 
 // Recogida de parámetros con POST (AJAX Fetch ECMAScript 6)
 $data = json_decode(file_get_contents('php://input'), true);
+$action = isset($data["action"])? $data["action"]:"";
+$filters = isset($data["filters"])? $data["filters"]:[];
+$arrMedico = isset($data["medico"])? $data["medico"]:[];
 //echo "<pre>";
 //var_dump($data);
 //echo "</pre>";
 
 // Recogida de parámetros con POST (AJAX JQuery)
-$action = isset($_POST["action"])? $_POST["action"]:"";
-$filters = isset($_POST["filters"])? $_POST["filters"]:[];
-$arrMedico = isset($_POST["medico"])? $_POST["medico"]:[];
+//$action = isset($_POST["action"])? $_POST["action"]:"";
+//$filters = isset($_POST["filters"])? $_POST["filters"]:[];
+//$arrMedico = isset($_POST["medico"])? $_POST["medico"]:[];
 //echo "<pre>";
 //print_r($_POST);
 //echo "</pre>";
